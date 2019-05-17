@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XDquatrinhmeobatchuot</title>
+</head>
+<body>
+<input  value="Kêu đi" type="button" onclick="say()">
+<input type="button" value="Đuổi chuột" onclick="run()">
+<p id="say"></p>
+<p id="run"></p>
+
+<script>
+    let Mouse = function (name, weight, speed, status) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.status = status;
+
+        this.getWeight = function () {
+            return this.weight;
+        };
+        this.getSpeed = function () {
+            return this.speed;
+        };
+        this.getStatus = function () {
+            return this.status;
+        };
+        this.say = function (word) {
+            return word;
+        };
+    };
+    
+    let Cat = function (name, weight, maxSpeed) {
+        this.name= name;
+        this.weight=weight;
+        this.maxSpeed= maxSpeed;
+
+        this.getWeight=function () {
+            return this.weight;
+        };
+        this.getSpeed=function () {
+            return this.maxSpeed;
+        };
+
+        this.say=function (word) {
+            return word;
+        };
+        this.catch=function (Mouse) {
+            if(this.getSpeed() > Mouse.getSpeed()){
+                alert("Mèo đã bắt được chuột");
+                if(Mouse.getStatus()=== false){
+                    alert("Chuột chết rồi, không thèm ăn");
+                }else {
+                    this.weight= this.weight + mouse.getWeight();
+                    console.log(this.weight);
+                }
+            }else {
+                alert("Chuột chạy mất rồi");
+            }
+        };
+    };
+
+    let mouse= new Mouse("Jerry", 10, 0, false);
+    let cat= new Cat("Tom", 100, 200);
+    function say() {
+        document.getElementById("say").innerHTML+=mouse.say("Chít Chít")+"<br>"+cat.say("Meo Meo")+"<br>";
+    }
+    function run() {
+        cat.catch(mouse);
+    }
+
+
+</script>
+</body>
+</html>
